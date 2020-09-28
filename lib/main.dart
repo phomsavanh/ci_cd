@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:appcenter/appcenter.dart';
-import 'package:appcenter_analytics/appcenter_analytics.dart';
-import 'package:appcenter_crashes/appcenter_crashes.dart';
+// import 'package:appcenter/appcenter.dart';
+// import 'package:appcenter_analytics/appcenter_analytics.dart';
+// import 'package:appcenter_crashes/appcenter_crashes.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_appcenter_bundle/flutter_appcenter_bundle.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -26,7 +28,6 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -39,11 +40,16 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-  void initAppCenter() async{
-    final ios = defaultTargetPlatform == TargetPlatform.iOS;
-    var app_secret = ios? "3d13bf2f-e2ba-4e6c-8424-1f06c03ea3c9" : "b9d311dc-c4c6-4aa8-9c82-f9932d976c6a";
-    await AppCenter.start(app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
+
+  void initAppCenter() async {
+    // final ios = defaultTargetPlatform == TargetPlatform.iOS;
+    // var app_secret = ios? "3d13bf2f-e2ba-4e6c-8424-1f06c03ea3c9" : "b9d311dc-c4c6-4aa8-9c82-f9932d976c6a";
+    // await AppCenter.start(app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
+    await AppCenter.startAsync(
+        appSecretAndroid: 'b9d311dc-c4c6-4aa8-9c82-f9932d976c6a',
+        appSecretIOS: '3d13bf2f-e2ba-4e6c-8424-1f06c03ea3c9');
   }
+
   @override
   void initState() {
     super.initState();
