@@ -41,12 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   void initAppCenter() async{
     final ios = defaultTargetPlatform == TargetPlatform.iOS;
-    var app_secret = ios? "iOSGuid" : "b9d311dc-c4c6-4aa8-9c82-f9932d976c6a";
+    var app_secret = ios? "3d13bf2f-e2ba-4e6c-8424-1f06c03ea3c9" : "b9d311dc-c4c6-4aa8-9c82-f9932d976c6a";
     await AppCenter.start(app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
   }
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     initAppCenter();
   }
