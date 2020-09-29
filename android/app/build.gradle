@@ -45,17 +45,17 @@ android {
         versionName flutterVersionName
     }
 
-    signingConfigs {
-       release {
-           keyAlias "key"
-           keyPassword "18081998"
-           storeFile file("../android.keystore")
-           storePassword "18081998"
-       }
-   }
+//     signingConfigs {
+//        release {
+//            keyAlias "key"
+//            keyPassword "18081998"
+//            storeFile file("../android.keystore")
+//            storePassword "18081998"
+//        }
+//    }
    buildTypes {
        release {
-           signingConfig signingConfigs.release
+           signingConfig signingConfigs.debug
        }
    }
 }
